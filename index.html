@@ -11,14 +11,11 @@ body{font-family:Arial, sans-serif;background:#f0fdf4;color:#1f2937;line-height:
 header{background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),url('images/profile.jpg');background-size:cover;background-position:center;color:#fff;padding:120px 20px;text-align:center}
 header h1{font-size:52px;margin-bottom:20px}
 header p{max-width:700px;margin:auto;font-size:20px}
-.btn{display:inline-block;background:#16a34a;color:#fff;padding:14px 28px;border-radius:30px;text-decoration:none;margin-top:25px;font-weight:600;transition:.3s}
-.btn:hover{background:#15803d}
 section{padding:80px 20px;max-width:1200px;margin:auto}
 h2{text-align:center;margin-bottom:50px;font-size:36px;color:#166534}
 .grid{display:grid;gap:30px}
 .grid-3{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
 .card{background:#fff;padding:25px;border-radius:20px;box-shadow:0 10px 25px rgba(0,0,0,.08)}
-.gallery img{width:100%;border-radius:20px;height:250px;object-fit:cover}
 .testimonial{background:#dcfce7;border-left:6px solid #16a34a;padding:20px}
 input,textarea{padding:12px;border-radius:10px;border:1px solid #ccc;width:100%}
 footer{background:#052e16;color:#fff;text-align:center;padding:30px;margin-top:40px}
@@ -27,12 +24,20 @@ footer{background:#052e16;color:#fff;text-align:center;padding:30px;margin-top:4
   header h1{font-size:36px}
   h2{font-size:28px}
 }
+
+/* Gallery Selection */
+.gallery-selection{max-width:900px;margin:auto;text-align:center}
+.main-image img{width:100%;max-height:500px;border-radius:20px;object-fit:cover;margin-bottom:10px;transition:0.3s}
+.main-description{font-size:18px;color:#166534;margin-bottom:20px;text-align:center;max-width:900px;margin-left:auto;margin-right:auto}
+.thumbnails{display:flex;justify-content:center;gap:15px;flex-wrap:wrap;margin-bottom:40px}
+.thumbnails img{width:120px;height:80px;object-fit:cover;border-radius:10px;cursor:pointer;transition:0.3s;border:2px solid transparent}
+.thumbnails img:hover{border:2px solid #16a34a}
 </style>
 </head>
 <body>
 
 <header>
-<h1>Discover Tacadang, Benguet</h1>
+<h1>Discover Tacadang</h1>
 <p>Tacadang isn’t just sightseeing—it’s experiencing a serene mountain world, where the clouds, peaks, and night sky make you feel small yet alive. It’s the kind of place that stays in your memory long after you leave.</p>
 </header>
 
@@ -54,22 +59,33 @@ Tacadang is a remote mountainous barangay in Kibungan, Benguet, known for its br
 
 <section>
 <h2>Photo Gallery</h2>
-<div class="grid grid-3 gallery">
-<img src="images/pic1.jpg" alt="Tacadang view 1">
-<img src="images/pic2.jpg" alt="Tacadang view 2">
-<img src="images/pic3.jpg" alt="Tacadang view 3">
+<div class="gallery-selection">
+  <!-- Large Display -->
+  <div class="main-image">
+    <img id="currentImage" src="images/pic1.jpg" alt="Tacadang view 1">
+      </div>
+  <div class="main-description" id="imageDescription">Sunrise over the Tacadang mountains, clouds rolling across the valleys.</div>
+  
+  <!-- Thumbnails -->
+  <div class="thumbnails">
+    <img src="images/pic1.jpg" alt="Tacadang view 1" onclick="changeImage(this, 'You’ll be riding in a 4x4 vehicle that can handle steep, rocky, and muddy paths. It’s perfect if you want to reach high viewpoints like Sea of Clouds without long hikes.')">
+    <img src="images/pic2.jpg" alt="Tacadang view 2" onclick="changeImage(this, 'Visiting the Crying Mountains is part of more adventurous and immersive hikes in the Cordillera region — often with panoramic views, waterfalls, forests, and rice terraces along the way.')">
+    <img src="images/pic3.jpg" alt="Tacadang view 3" onclick="changeImage(this, 'The “Sea of Clouds” occurs when fog and low-lying clouds settle in the valleys, while the mountain peaks rise above them — it looks like islands floating on a white sea.')">
+    <img src="images/pic4.jpg" alt="Tacadang view 4" onclick="changeImage(this, 'The “Mighty Road of Tacadang” isn’t an official highway like Halsema Highway or Kennon Road — it’s a name adventure riders and locals give to the rough, high‑elevation access route leading into Tacadang and deeper into the mountainous parts of Kibungan, Benguet. It’s sometimes also referred to by visitors as the “Mighty Gates of Tacadang” because of how imposing and rugged the entry road feels when you first start ascending')">
+    <img src="images/pic5.jpg" alt="Tacadang view 5" onclick="changeImage(this, 'The “Gate of Tacadang” — often called the “Mighty Gates of Tacadang” — is a name used by riders and adventurers for a **notable entry / landmark on the rugged mountain access trail leading into Tacadang.')">
+  </div>
 </div>
 </section>
 
 <section>
 <h2>🏕️ Tips for the Itinerary</h2>
 <div class="card">
-<p><strong>1:</strong> Best Season: November–April for clear skies.</p>
-<p><strong>2:</strong> Transportation: 4x4 vehicles recommended.</p>
-<p><strong>3:</strong> Gear: Hiking shoes, flashlight, water, snacks.</p>
-<p><strong>4:</strong> Camping: Bring sleeping bags and warm layers.</p>
-<p><strong>5:</strong> Guides: Hire a local guide for navigation.</p>
-<p><strong>6:</strong> Respect: Leave no litter.</p>
+<p><strong></strong> Best Season: November–April for clear skies.</p>
+<p><strong></strong> Transportation: 4x4 vehicles recommended.</p>
+<p><strong></strong> Gear: Hiking shoes, flashlight, water, snacks.</p>
+<p><strong></strong> Camping: Bring sleeping bags and warm layers.</p>
+<p><strong></strong> Guides: Hire a local guide for navigation.</p>
+<p><strong></strong> Respect: Leave no litter.</p>
 </div>
 </section>
 
@@ -86,6 +102,13 @@ Tacadang is a remote mountainous barangay in Kibungan, Benguet, known for its br
 <footer>
 <p>© 2026 Tacadang, Benguet | © Gary D. Ronquillo</p>
 </footer>
+
+<script>
+function changeImage(el, description){
+  document.getElementById('currentImage').src = el.src;
+  document.getElementById('imageDescription').innerText = description;
+}
+</script>
 
 </body>
 </html>
